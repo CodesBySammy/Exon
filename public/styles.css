@@ -10,13 +10,12 @@
     font-weight: bold;
     cursor: pointer;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-  
-  .install-button:hover {
-    background-color: #3367d6;
-  }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
+.install-button:hover {
+    background-color: #3367d6;
+}
 
 /* Global styles */
 * {
@@ -63,6 +62,9 @@ h2 {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .primary-btn {
@@ -87,10 +89,13 @@ h2 {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 /* Section styles */
-.upload-section, .mapping-section, .result-section {
+.upload-section,
+.mapping-section,
+.result-section {
     background-color: white;
     border-radius: 8px;
     padding: 30px;
@@ -102,6 +107,7 @@ h2 {
 .file-input-container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: 20px;
 }
 
@@ -123,6 +129,7 @@ input[type="file"] {
     margin-right: 10px;
     font-size: 16px;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .file-label:hover {
@@ -132,6 +139,7 @@ input[type="file"] {
 #file-name {
     font-size: 16px;
     color: #666;
+    margin-top: 10px;
 }
 
 /* Attributes mapping section */
@@ -149,6 +157,7 @@ input[type="file"] {
     align-items: center;
     padding: 12px;
     border-bottom: 1px solid #f0f0f0;
+    flex-wrap: wrap;
 }
 
 .attribute-row:last-child {
@@ -191,6 +200,7 @@ input[type="file"] {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 /* Result section */
@@ -226,8 +236,12 @@ input[type="file"] {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Utility classes */
@@ -236,23 +250,95 @@ input[type="file"] {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+
     .attribute-row {
         flex-direction: column;
         align-items: flex-start;
     }
-    
-    .excel-column, .json-attribute {
+
+    .excel-column,
+    .json-attribute {
         width: 100%;
         margin-bottom: 10px;
     }
-    
+
     .button-group {
         flex-direction: column;
     }
-    
+
     .btn {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .install-button {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .upload-section,
+    .mapping-section,
+    .result-section {
+        padding: 20px;
+    }
+
+    .file-input-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .file-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .install-button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .json-attribute input[type="text"] {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .preview-container {
+        font-size: 12px;
     }
 }
 
