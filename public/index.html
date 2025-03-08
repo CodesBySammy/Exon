@@ -11,6 +11,18 @@
     <link rel="apple-touch-icon" href="/images/icon-192x192(1).png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <script>
+        window.onload = function () {
+    // Clear all cookies
+    document.cookie.split(";").forEach(function (c) {
+        document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+    });
+
+    // Clear sessionStorage
+    sessionStorage.clear();
+};
+    </script>
 </head>
 <body>
     <button id="installButton" class="install-button">Install App</button>
