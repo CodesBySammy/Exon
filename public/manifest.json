@@ -1,0 +1,23 @@
+
+{
+    "name": "ExcelToJson",
+    "short_name": "Exon",
+    "description": "An application to convert sheets to json",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4285f4",
+    "icons": [
+      {
+        "src": "/images/icon-192x192(1).png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/images/icon-512x512(1).png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel to JSON Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4285f4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="/images/icon-192x192(1).png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+<body>
+    <button id="installButton" class="install-button">Install App</button>
+    <div class="container">
+        <header>
+            <h1>Excel to JSON Converter</h1>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <h2>Upload Excel File</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="file-input-container">
+                        <input type="file" id="excelFile" name="excelFile" accept=".xlsx, .xls" required>
+                        <label for="excelFile" class="file-label">Choose file</label>
+                        <span id="file-name">No file chosen</span>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Process File</button>
+                </form>
+                <div id="loading" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Processing file...</p>
+                </div>
+            </div>
+
+            <div id="mapping-section" class="mapping-section hidden">
+                <h2>Customize JSON Attributes</h2>
+                <p>Map your Excel columns to JSON attributes below. Uncheck any columns you don't want to include.</p>
+                
+                <div class="controls">
+                    <button id="selectAll" class="btn secondary-btn">Select All</button>
+                    <button id="deselectAll" class="btn secondary-btn">Deselect All</button>
+                </div>
+                
+                <div id="attributes-container" class="attributes-container">
+                    <!-- Mapping fields will be dynamically inserted here -->
+                </div>
+                
+                <div class="button-group">
+                    <button id="convertBtn" class="btn primary-btn">Convert to JSON</button>
+                    <button id="resetBtn" class="btn secondary-btn">Reset</button>
+                </div>
+            </div>
+
+            <div id="result-section" class="result-section hidden">
+                <h2>Conversion Complete</h2>
+                <p>Your Excel file has been successfully converted to JSON.</p>
+                <div class="button-group">
+                    <button id="downloadBtn" class="btn primary-btn">Download JSON</button>
+                    <button id="newConversionBtn" class="btn secondary-btn">New Conversion</button>
+                </div>
+                <div class="preview-container">
+                    <h3>Preview:</h3>
+                    <pre id="jsonPreview"></pre>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Excel to JSON Converter</p>
+        </footer>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
